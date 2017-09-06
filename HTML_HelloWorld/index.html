@@ -2,10 +2,38 @@
 <html>
 	<head>
 		<title>Hello World!</title>
+		<style>		
+			body
+			{
+				background-image:url(./bg.jpg);
+				color:white;
+			}
+			
+			p
+			{
+				text-align:left;
+			}
+			
+			
+			.proj
+			{
+				color:orange;
+			}
+			
+			table
+			{
+				border-color:rgb(200,200,200);
+				padding:10px;
+				border-width:5px;
+				border-style:solid;
+				width:400px;
+			}
+			
+		</style>
 	</head>
 	
 	<body>
-		<img src="./moonThumb.jpg" alt="Moon Picture" height= "200" width = "200">
+		<img style="opacity:0.5; position:absolute; top:0px left:0px;" src="./moonThumb.jpg" alt="Moon Picture" height= "200" width = "200">
 		<h1 style="text-align:center;"> Name </h1>
 		<h2 style="text-align:center;"> Subtitle 555-5555 | <a href="mailto:cmoxleym@asu.edu"> cmoxleym@asu.edu </a> </h2>
 		
@@ -22,20 +50,47 @@
 		<h3> Skills </h3>
 		<p>
 			This is a list of skills.
-			<ol>
-				<li> Java </li>
-				<li> C/C++ </li>
-				<li> Python </li>
-				<li> Batch </li>
-				<li> HTML </li>
-				<li> Scheme </li>
-				<li> Arduino </li>
-				<li> Processing </li>
-			</ol>
+			<table>
+				<tr style="color:white; background-color:black;">
+					<th>Progamming Languages</th>
+					<th>Operating Systems</th>
+					<th>Other</th>
+				</tr>
+				<tr style="background-color:gray;">
+					<td>Java</td>
+					<td>Windows</td>
+					<td>Arduino</td>
+				</tr>
+				<tr style="background-color:gray;">
+					<td>C/C++</td>
+					<td>Linux (Ubuntu, Arch)</td>
+					<td>M.U.G.E.N. Language</td>
+				</tr>
+				<tr style="background-color:gray;">
+					<td>Python (2.7 & 3.3) </td>
+					<td>MS-DOS</td>
+					<td>HTML</td>
+				</tr>
+				<tr style="background-color:gray;">
+					<td>Batch</td>
+					<td></td>
+					<td>Game Maker Language</td>
+				</tr>
+				<tr style="background-color:gray;">
+					<td>Scheme</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr style="background-color:gray;">
+					<td>Processing</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
 		</p>
 		
 		<h3> Projects </h3>
-		<p>
+		<p class="proj">
 			This is a list of projects.
 			<ul>
 				<li><strong> Project 1 </strong></li>
