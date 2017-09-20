@@ -1,0 +1,82 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>Slide Show</title>
+  <script>
+  var currSlide = 0;
+	function start()
+	{
+		var slides = document.getElementsByTagName("img");
+		slides[0].style.display = "block";
+		slides[1].style.display = "none";
+		slides[2].style.display = "none";
+		slides[3].style.display = "none";
+		
+		//$(".container img").css("display","none")
+		//$(".container img:nth-of-type(1)").css("display","block")
+		//$(".container img").fadeOut(0);
+		//$(".container img:nth-of-type(1)").fadeIn(0);
+	}
+	
+	function goPrevSlide()
+	{
+		console.log("Prev click");
+		var prevSlide = (currSlide + 4 - 1) % 4;
+		//$(".container img:nth-of-type(" + (currSlide + 1) + ")").stop().fadeOut(0);
+		//$(".container img:nth-of-type(" + (prevSlide + 1) + ")").stop().fadeIn(1000);
+		slides[0].style.display = "none";
+		slides[1].style.display = "none";
+		slides[2].style.display = "none";
+		slides[3].style.display = "none";
+		slides[prevSlide].style.display = "block";
+		currSlide = prevSlide;
+		
+	}
+	
+	function goNextSlide()
+	{
+		console.log("Next click");
+		var nextSlide = (currSlide + 1) % 4;
+		//$(".container img:nth-of-type(" + (currSlide + 1) + ")").stop().fadeOut(0);
+		//$(".container img:nth-of-type(" + (nextSlide + 1) + ")").stop().fadeIn(1000);
+		slides[0].style.display = "none";
+		slides[1].style.display = "none";
+		slides[2].style.display = "none";
+		slides[3].style.display = "none";
+		slides[nextSlide].style.display = "block";
+		currSlide = nextSlide;
+	}
+  </script>
+  <style>
+    img{
+      margin: auto;
+      display: block;
+    }
+    .navB{
+        position: absolute;
+        top: calc(50% - 20px);
+    }
+    #prev{
+        left: 10px;
+    }
+    #next{
+        right: 10px;
+    }
+  </style>
+</head>
+
+
+<body onload="start()">
+	<button onclick="goNextSlide()" class='navB' id='next'> > </button>
+	<button onclick="goPrevSlide()" class='navB' id='prev'> < </button>
+
+  <div class='container'>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Cuban_green_woodpecker_%28Xiphidiopicus_percussus_percussus%29_female.JPG/450px-Cuban_green_woodpecker_%28Xiphidiopicus_percussus_percussus%29_female.JPG'> 
+    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Pied-winged_swallow_%28Hirundo_leucosoma%29.jpg/675px-Pied-winged_swallow_%28Hirundo_leucosoma%29.jpg'> 
+    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Rufous-tailed_flycatcher_%28Myiarchus_validus%29.JPG/539px-Rufous-tailed_flycatcher_%28Myiarchus_validus%29.JPG'> 
+    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Malachite_kingfisher_%28Corythornis_cristatus%29.jpg/450px-Malachite_kingfisher_%28Corythornis_cristatus%29.jpg'> 
+  </div>
+</body>
+
+</html>
