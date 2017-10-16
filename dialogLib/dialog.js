@@ -1,12 +1,18 @@
 var dialogLib = {
   alert:{
-    show: function(msg, label){
+		_okClicked: function(){
+			  _okCB();
+			  dialogLib.alert.hide();  
+			},
+		_okCB: function(){},
+    show: function(msg, label, callback){
+		_okCB =callback = callback || function(){};
       label = label || "OK";
       var outS = "";
       outS += "<div class='wrapper'>" +
           "<div class='frame'>" +
             "<h1>" + msg + "</h1>"+
-            "<button onclick='dialogLib.alert.hide()'>" + label + "</button>"+
+            "<button onclick='dialogLib.alert._okClicked()'>" + label + "</button>"+
           "</div>"+
         "</div>";
       $("body").append(outS);
@@ -21,7 +27,7 @@ var dialogLib = {
 		var out = "";
 		out += "<div class='wrapper'>" +
           "<div class='frame'>" +
-            "<h1>" + x + "</h1>"+
+            "<h3>" + x + "</h3>"+
             "<button onclick='dialogLib.prompt.hide()'> OK </button>"+
           "</div>"+
         "</div>";
@@ -36,7 +42,7 @@ var dialogLib = {
 	
 	
 	
-    show: function(msg, label){
+    show: function(msg, label, exitLabel){
       label = label || "Submit";
       var outS = "";
       outS += "<div class='wrapper'>" +
@@ -44,6 +50,7 @@ var dialogLib = {
             "<h1>" + msg + "</h1>"+
 			"<input type='text' id='inputField'>"+
             "<button onclick='dialogLib.prompt._submitted()'>" + label + "</button>"+
+			"<button onclick='dialogLib.prompt.hide()'>" + exitLabel + "</button>"+
           "</div>"+
         "</div>";
       $("body").append(outS);

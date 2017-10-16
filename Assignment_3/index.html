@@ -46,13 +46,13 @@ function hsv2rgb(h, s, v, out) {
     var current = 0;
     var imageURLs = "";
     function start(){
-      imageURLs = "#https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Spotted_Trunkfish.jpg/471px-Spotted_Trunkfish.jpg,https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Longnose_batfish.jpg/631px-Longnose_batfish.jpg,https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Anemone_purple_anemonefish.jpg/360px-Anemone_purple_anemonefish.jpg,https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Chain_moray_eel.jpg/361px-Chain_moray_eel.jpg,https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Caesio_teres_in_Fiji_by_Nick_Hobgood.jpg/652px-Caesio_teres_in_Fiji_by_Nick_Hobgood.jpg".replace("#","").split(",")
+		imageURLs = window.location.hash.replace("#","").split(",");
       var mu = "";
       var muT = "";
       for(var i = 0; i < imageURLs.length; i++){
         var url = imageURLs[i];
         mu += '<div class="slide" style="background-image:url(' + url + ')"> </div>';
-        muT += '<div class="num" onclick="goToSlide(' + i + ')">' + (i + 1) + '</div>';;
+        muT += '<div class="num" onclick="goToSlide(' + i + ')">' + (i + 1) + '</div>';
       }
       //$("#container").html(mu);
       document.getElementById("container").innerHTML = mu;
@@ -97,8 +97,16 @@ function hsv2rgb(h, s, v, out) {
 		var next = index;
 		var slides = document.getElementById("container").getElementsByClassName("slide");
 		var trackNos = document.getElementById("track").getElementsByClassName("num");
-		$("#container .slide:nth-of-type(" + (current + 1)+ ")").stop().animate({"margin-left":"100%"});
-		$("#container .slide:nth-of-type(" + (next+ 1)+ ")").stop().css({"margin-left": "-100%", "display": "block"}).animate({"margin-left": "0%"}) // fadein next slide
+		if(next < current)
+		{
+			$("#container .slide:nth-of-type(" + (current + 1)+ ")").stop().animate({"margin-left":"100%"});
+			$("#container .slide:nth-of-type(" + (next+ 1)+ ")").stop().css({"margin-left": "-100%", "display": "block"}).animate({"margin-left": "0%"}) // fadein next slide
+		}
+		else
+		{
+			$("#container .slide:nth-of-type(" + (current + 1)+ ")").stop().animate({"margin-left":"-100%"});
+      $("#container .slide:nth-of-type(" + (next+ 1)+ ")").stop().css({"margin-left": "100%", "display": "block"}).animate({"margin-left": "0%"}) // fadein next slide
+		}
 		$("#track .num:nth-of-type(" + (current + 1) + ")").removeClass("selected");
 		$("#track .num:nth-of-type(" + (next + 1) + ")").addClass("selected");
 		current = next; // set new current slide    

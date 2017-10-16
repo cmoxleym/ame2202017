@@ -9,7 +9,7 @@
 		<script>
 			function alertClicked()
 			{
-				dialogLib.alert.show("Testing", "Got it. Close this window if everything works.");
+				dialogLib.alert.show("Testing", "Got it. Close this window if everything works.", function(){alert("User clicked OK")});
 			}
 			
 			function confirmClicked()
@@ -19,7 +19,7 @@
 			
 			function promptClicked()
 			{
-				dialogLib.prompt.show("Enter some text.", "Submit");
+				dialogLib.prompt.show("Enter some text.", "Submit", "Cancel");
 			}
 		</script>
 	</head>
