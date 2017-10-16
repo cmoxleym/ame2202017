@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="dialog.js"></script>
+		<script src='dialog.css'></script>
+		<link rel="stylesheet" type="text/css" href="dialog.css">
+		
+		<script>
+			function alertClicked()
+			{
+				dialogLib.alert.show("Testing", "Got it. Close this window if everything works.");
+			}
+			
+			function confirmClicked()
+			{
+				dialogLib.confirm.show("Does this work yet?", "Yes", "No", function(){alert("Great!")}, function(){alert("Liar, it works just fine.")});
+			}
+			
+			function promptClicked()
+			{
+				dialogLib.prompt.show("Enter some text.", "Submit");
+			}
+		</script>
+	</head>
+	
+	<body>
+		<button onclick='alertClicked()'>Alert Demo</button>
+		<button onclick='promptClicked()'>Prompt Demo</button>
+		<button onclick='confirmClicked()'>Confirm Demo</button>
+	</body>
+</html>
