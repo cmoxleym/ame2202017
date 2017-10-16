@@ -52,7 +52,7 @@ function hsv2rgb(h, s, v, out) {
       for(var i = 0; i < imageURLs.length; i++){
         var url = imageURLs[i];
         mu += '<div class="slide" style="background-image:url(' + url + ')"> </div>';
-        muT += '<div class="num" onclick="goToSlide(i + 1)">' + (i + 1) + '</div>';;
+        muT += '<div class="num" onclick="goToSlide(' + i + ')">' + (i + 1) + '</div>';;
       }
       //$("#container").html(mu);
       document.getElementById("container").innerHTML = mu;
@@ -91,10 +91,10 @@ function hsv2rgb(h, s, v, out) {
       $("#container").css({"background": getBGColor(current)});
     }
 	
-	function goToSlide()
+	function goToSlide(index)
 	{
 		var n = imageURLs.length;
-		var next = n;
+		var next = index;
 		var slides = document.getElementById("container").getElementsByClassName("slide");
 		var trackNos = document.getElementById("track").getElementsByClassName("num");
 		$("#container .slide:nth-of-type(" + (current + 1)+ ")").stop().animate({"margin-left":"100%"});
