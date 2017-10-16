@@ -100,7 +100,7 @@ function hsv2rgb(h, s, v, out) {
 		$("#container .slide:nth-of-type(" + (current + 1)+ ")").stop().animate({"margin-left":"100%"});
 		$("#container .slide:nth-of-type(" + (next+ 1)+ ")").stop().css({"margin-left": "-100%", "display": "block"}).animate({"margin-left": "0%"}) // fadein next slide
 		$("#track .num:nth-of-type(" + (current + 1) + ")").removeClass("selected");
-		$("#track .num:nth-of-type(" + (next) + ")").addClass("selected");
+		$("#track .num:nth-of-type(" + (next + 1) + ")").addClass("selected");
 		current = next; // set new current slide    
 		$("#container").css({"background": getBGColor(current)});
 	}
