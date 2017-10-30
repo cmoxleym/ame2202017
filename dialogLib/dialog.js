@@ -48,12 +48,134 @@ var dialogLib = {
       outS += "<div class='wrapper'>" +
           "<div class='frame'>" +
             "<h1>" + msg + "</h1>"+
-			"<input type='text' id='inputField'>"+
+			"<input type='text' id='inputField' class='input'>"+
             "<button onclick='dialogLib.prompt._submitted()'>" + label + "</button>"+
 			"<button onclick='dialogLib.prompt.hide()'>" + exitLabel + "</button>"+
           "</div>"+
         "</div>";
       $("body").append(outS);
+	  $(".wrapper .frame .input").focus();
+	  //_getField = "Entered: " + document.getElementById("inputField").value;
+    },
+	
+	
+	
+    hide: function(){
+      $(".wrapper").remove();
+    }
+  },
+  
+  login:{
+	_getUsername: function(x){
+		var out = "";
+		out += "<div class='wrapper'>" +
+          "<div class='frame'>" +
+            "<h3>" + x + "</h3>"+
+            "<button onclick='dialogLib.prompt.hide()'> Login </button>"+
+          "</div>"+
+        "</div>";
+      $("body").append(out);
+	},
+	
+	_getPassword: function(x){
+		var out = "";
+		out += "<div class='wrapper'>" +
+          "<div class='frame'>" +
+            "<h3>" + x + "</h3>"+
+            "<button onclick='dialogLib.login.hide()'> Login </button>"+
+          "</div>"+
+        "</div>";
+      $("body").append(out);
+	},
+	
+	_submitted: function()
+	{
+		var x = document.getElementById("uName").value;
+		var y = document.getElementById("passwd").value;
+		//dialogLib.prompt.hide();
+	},
+	
+	
+	
+    show: function(msg, label1, exitLabel){
+      label1 = label1 || "Login";
+	  exitLabel = exitLabel || "Cancel";
+      var outS = "";
+      outS += "<div class='wrapper'>" +
+          "<div class='frame'>" +
+            "<h4>" + msg + "</h4>" +
+			"Username: " + "<input type='text' id='uName' class='userInput'> <br>" +
+			"Password: " + "<input type='password' id='passwd'> <br><br>" +
+            "<button onclick='dialogLib.login._submitted()'>" + label1 + "</button>"+
+			"<button onclick='dialogLib.login.hide()'>" + exitLabel + "</button>"+
+          "</div>"+
+        "</div>";
+      $("body").append(outS);
+	  $(".wrapper .frame .userInput").focus();
+	  //_getField = "Entered: " + document.getElementById("inputField").value;
+    },
+	
+	
+	
+    hide: function(){
+      $(".wrapper").remove();
+    }
+  },
+  
+  signup:{
+	_getUsername: function(x){
+		var out = "";
+		out += "<div class='wrapper'>" +
+          "<div class='frame'>" +
+            "<h3>" + x + "</h3>"+
+            "<button onclick='dialogLib.prompt.hide()'> OK </button>"+
+          "</div>"+
+        "</div>";
+      $("body").append(out);
+	},
+	
+	_getPassword: function(x){
+		var out = "";
+		out += "<div class='wrapper'>" +
+          "<div class='frame'>" +
+            "<h3>" + x + "</h3>"+
+            "<button onclick='dialogLib.signup.hide()'> OK </button>"+
+          "</div>"+
+        "</div>";
+      $("body").append(out);
+	},
+	
+	_submitted: function()
+	{
+		var x = document.getElementById("uName").value;
+		var y = document.getElementById("passwd1").value;
+		var z = document.getElementById("passwd2").value;
+		var pWord = "";
+		if(z == y)
+		{
+			pWord = z;
+		}
+		//dialogLib.prompt.hide();
+	},
+	
+	
+	
+    show: function(msg, label1, exitLabel){
+      label1 = label1 || "Login";
+	  exitLabel = exitLabel || "Cancel";
+      var outS = "";
+      outS += "<div class='wrapper'>" +
+          "<div class='frame'>" +
+            "<h4>" + msg + "</h4>" +
+			"Choose your username: " + "<input type='text' id='uName' class='userInput'> <br>" +
+			"Choose a password: " + "<input type='password' id='passwd1'> <br>" +
+			"Reenter your password: " + "<input type='password' id='passwd2'> <br><br>" +
+            "<button onclick='dialogLib.signup._submitted()'>" + label1 + "</button>"+
+			"<button onclick='dialogLib.signup.hide()'>" + exitLabel + "</button>"+
+          "</div>"+
+        "</div>";
+      $("body").append(outS);
+	  $(".wrapper .frame .userInput").focus();
 	  //_getField = "Entered: " + document.getElementById("inputField").value;
     },
 	

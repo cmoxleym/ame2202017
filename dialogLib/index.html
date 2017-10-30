@@ -21,6 +21,16 @@
 			{
 				dialogLib.prompt.show("Enter some text.", "Submit", "Cancel");
 			}
+			
+			function loginClicked()
+			{
+				dialogLib.login.show("Enter your username and password.", "Login", "Cancel");
+			}
+			
+			function signupClicked()
+			{
+				dialogLib.signup.show("Enter a username and password.", "OK", "Cancel");
+			}
 		</script>
 	</head>
 	
@@ -28,5 +38,7 @@
 		<button onclick='alertClicked()'>Alert Demo</button>
 		<button onclick='promptClicked()'>Prompt Demo</button>
 		<button onclick='confirmClicked()'>Confirm Demo</button>
+		<button onclick='loginClicked()'>Login</button>
+		<button onclick='signupClicked()'>Register</button>
 	</body>
 </html>
