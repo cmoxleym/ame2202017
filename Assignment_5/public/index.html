@@ -13,13 +13,14 @@ function start()
     console.log(items);
     var markup = "";
     for(var i = 0; i < items.length; i++){
-	markup += "<div id='list" + i + "' style='border: 5px 				solid blue;'>"
-      markup += "<h1>" + items[i].name + "</h1><br>"
-	 markup += "<h3>" + items[i].artistName + "</h3><br>"
-      markup += "<img src='" + items[i].artworkUrl100 + "'>";
-	 markup += "<h5>" + items[i].genres[0].name + "</h5><br>"
+	markup += "<div id='list" + i + "'style='border: 5px solid blue; text-align:center; margin:0 auto; width:600px;'>"
+	markup += "<h1><a href='" + items[i].url + "'>" + items[i].name + "</a></h1><br>"
+	markup += "<h3><a href='" + items[i].artistUrl + "'>" + items[i].artistName + "</a></h3><br>"
+	markup += "<img src='" + items[i].artworkUrl100 + "'>";
+	markup += "<h5><a href='" + items[i].genres[0].url + "'>" + items[i].genres[0].name + "</a>"
+	markup += "<br>Release Date: " + items[i].releaseDate + "</h5>"
 	markup += "</div>"
-
+	markup += "<h6><br></h6>"
     }
     document.getElementById("list").innerHTML = markup;
   });
