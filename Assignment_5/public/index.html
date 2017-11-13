@@ -5,7 +5,7 @@
 <script>
 function start()
 {
-  var url = 'https://rss.itunes.apple.com/api/v1/us/apple-music/hot-tracks/all/10/non-explicit.json';
+  var url = 'https://rss.itunes.apple.com/api/v1/us/itunes-music/top-songs/all/10/explicit.json';
   loadFile("./getFeed?url=" + url, function(data){
     console.log(data);
     data = JSON.parse(data);
