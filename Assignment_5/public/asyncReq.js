@@ -1,3 +1,5 @@
+/**
+*/
 function getXMLHTTPRequest()
 {
     var request;
