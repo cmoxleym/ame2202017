@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src='lib/ac.js'> </script>
+		<link rel="stylesheet" type="text/css" href="lib/ac.css">
+		<script>
+			function demo(d)
+			{
+				acInd.show();
+				setTimeout("acInd.hide()", d * 1000)
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick='demo(5)'> Test</button>
+	</body>
+</html>

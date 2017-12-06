@@ -1,0 +1,477 @@
+<html>
+<head>
+<title>
+  Image Resizer
+</title>
+<style>
+  #imagePreview1
+  {
+      display: block;
+  }
+  
+  #imagePreview2
+  {
+	margin-top: 50px;
+      display: block;
+  }
+  
+  #imagePreview3
+  {
+	margin-top: 50px;
+      display: block;
+  }
+  
+  #imagePreview4
+  {
+	margin-top: 50px;
+      display: block;
+  }
+  
+  #imagePreview5
+  {
+	margin-top: 50px;
+      display: block;
+  }
+  
+  #imagePreview6
+  {
+	margin-top: 50px;
+      display: block;
+  }
+  
+  #imagePreview7
+  {
+	margin-top: 50px;
+      display: block;
+  }
+  
+  #imagePreview8
+  {
+	margin-top: 50px;
+      display: block;
+  }
+  
+  #imagePreview9
+  {
+	margin-top: 50px;
+      display: block;
+  }
+  
+  #imagePreview10
+  {
+	margin-top: 50px;
+      display: block;
+  }
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+
+<script>
+var MAX_WIDTH = 500;
+var MAX_HEIGHT = 500;
+var imageUploaded = function()
+{
+   var file = $('#uploadImage').get(0);
+   if(file.files[0].type.split("/")[0].toLowerCase() != "image"){
+        alert("Incorrect file type -- Please ensure you are uploading an image file.");
+        return;
+   }
+   
+   if ( file.files && file.files[0] && file.files[0].type.split("/")[0].toLowerCase() === "image") {
+        var FR = new FileReader();
+        FR.onload = function(e) {
+            var data = e.target.result;
+            var canvas = document.createElement("canvas");
+            var img = document.createElement("img");
+            img.onload= function(){
+                 var width = img.width;
+                 var height = img.height;
+                 var w2 = 29;
+                 var h2 = 29;
+                 if (width > height) {
+                     if (width > w2) {
+                        h2 = height * h2 / width;
+                    }
+                 } else {
+                     if (height > h2) {
+                        w2 = width * h2 / height;
+                    }
+                }
+                canvas.width = w2;
+                canvas.height = h2;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, w2, h2);
+                var base64St = canvas.toDataURL("image/png");
+                document.getElementById("imagePreview1").src = base64St;
+                document.getElementById("imagePreview1").style.height = h2 + "px";
+                document.getElementById("imagePreview1").style.width= w2 + "px";
+
+            }
+            img.src = data;
+        };  
+        FR.readAsDataURL( file.files[0] );
+		
+		FR = new FileReader();
+        FR.onload = function(e) {
+            var data = e.target.result;
+            var canvas = document.createElement("canvas");
+            var img = document.createElement("img");
+            img.onload= function(){
+                 var width = img.width;
+                 var height = img.height;
+                 var w2 = 40;
+                 var h2 = 40;
+                 if (width > height) {
+                     if (width > w2) {
+                        h2 = height * h2 / width;
+                    }
+                 } else {
+                     if (height > h2) {
+                        w2 = width * h2 / height;
+                    }
+                }
+                canvas.width = w2;
+                canvas.height = h2;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, w2, h2);
+                var base64St = canvas.toDataURL("image/png");
+                document.getElementById("imagePreview2").src = base64St;
+                document.getElementById("imagePreview2").style.height = h2 + "px";
+                document.getElementById("imagePreview2").style.width= w2 + "px";
+
+            }
+            img.src = data;
+        };  
+        FR.readAsDataURL( file.files[0] );
+		
+		FR = new FileReader();
+        FR.onload = function(e) {
+            var data = e.target.result;
+            var canvas = document.createElement("canvas");
+            var img = document.createElement("img");
+            img.onload= function(){
+                 var width = img.width;
+                 var height = img.height;
+                 var w2 = 58;
+                 var h2 = 58;
+                 if (width > height) {
+                     if (width > w2) {
+                        h2 = height * h2 / width;
+                    }
+                 } else {
+                     if (height > h2) {
+                        w2 = width * h2 / height;
+                    }
+                }
+                canvas.width = w2;
+                canvas.height = h2;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, w2, h2);
+                var base64St = canvas.toDataURL("image/png");
+                document.getElementById("imagePreview3").src = base64St;
+                document.getElementById("imagePreview3").style.height = h2 + "px";
+                document.getElementById("imagePreview3").style.width= w2 + "px";
+
+            }
+            img.src = data;
+        };  
+        FR.readAsDataURL( file.files[0] );
+		
+		FR = new FileReader();
+        FR.onload = function(e) {
+            var data = e.target.result;
+            var canvas = document.createElement("canvas");
+            var img = document.createElement("img");
+            img.onload= function(){
+                 var width = img.width;
+                 var height = img.height;
+                 var w2 = 76;
+                 var h2 = 76;
+                 if (width > height) {
+                     if (width > w2) {
+                        h2 = height * h2 / width;
+                    }
+                 } else {
+                     if (height > h2) {
+                        w2 = width * h2 / height;
+                    }
+                }
+                canvas.width = w2;
+                canvas.height = h2;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, w2, h2);
+                var base64St = canvas.toDataURL("image/png");
+                document.getElementById("imagePreview4").src = base64St;
+                document.getElementById("imagePreview4").style.height = h2 + "px";
+                document.getElementById("imagePreview4").style.width= w2 + "px";
+
+            }
+            img.src = data;
+        };  
+        FR.readAsDataURL( file.files[0] );
+		
+		FR = new FileReader();
+        FR.onload = function(e) {
+            var data = e.target.result;
+            var canvas = document.createElement("canvas");
+            var img = document.createElement("img");
+            img.onload= function(){
+                 var width = img.width;
+                 var height = img.height;
+                 var w2 = 80;
+                 var h2 = 80;
+                 if (width > height) {
+                     if (width > w2) {
+                        h2 = height * h2 / width;
+                    }
+                 } else {
+                     if (height > h2) {
+                        w2 = width * h2 / height;
+                    }
+                }
+                canvas.width = w2;
+                canvas.height = h2;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, w2, h2);
+                var base64St = canvas.toDataURL("image/png");
+                document.getElementById("imagePreview5").src = base64St;
+                document.getElementById("imagePreview5").style.height = h2 + "px";
+                document.getElementById("imagePreview5").style.width= w2 + "px";
+
+            }
+            img.src = data;
+        };  
+        FR.readAsDataURL( file.files[0] );
+		
+		FR = new FileReader();
+        FR.onload = function(e) {
+            var data = e.target.result;
+            var canvas = document.createElement("canvas");
+            var img = document.createElement("img");
+            img.onload= function(){
+                 var width = img.width;
+                 var height = img.height;
+                 var w2 = 87;
+                 var h2 = 87;
+                 if (width > height) {
+                     if (width > w2) {
+                        h2 = height * h2 / width;
+                    }
+                 } else {
+                     if (height > h2) {
+                        w2 = width * h2 / height;
+                    }
+                }
+                canvas.width = w2;
+                canvas.height = h2;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, w2, h2);
+                var base64St = canvas.toDataURL("image/png");
+                document.getElementById("imagePreview6").src = base64St;
+                document.getElementById("imagePreview6").style.height = h2 + "px";
+                document.getElementById("imagePreview6").style.width= w2 + "px";
+
+            }
+            img.src = data;
+        };  
+        FR.readAsDataURL( file.files[0] );
+		
+		FR = new FileReader();
+        FR.onload = function(e) {
+            var data = e.target.result;
+            var canvas = document.createElement("canvas");
+            var img = document.createElement("img");
+            img.onload= function(){
+                 var width = img.width;
+                 var height = img.height;
+                 var w2 = 120;
+                 var h2 = 120;
+                 if (width > height) {
+                     if (width > w2) {
+                        h2 = height * h2 / width;
+                    }
+                 } else {
+                     if (height > h2) {
+                        w2 = width * h2 / height;
+                    }
+                } 
+                canvas.width = w2;
+                canvas.height = h2;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, w2, h2);
+                var base64St = canvas.toDataURL("image/png");
+                document.getElementById("imagePreview7").src = base64St;
+                document.getElementById("imagePreview7").style.height = h2 + "px";
+                document.getElementById("imagePreview7").style.width= w2 + "px";
+
+            }
+            img.src = data;
+        };  
+        FR.readAsDataURL( file.files[0] );
+		
+		FR = new FileReader();
+        FR.onload = function(e) {
+            var data = e.target.result;
+            var canvas = document.createElement("canvas");
+            var img = document.createElement("img");
+            img.onload= function(){
+                 var width = img.width;
+                 var height = img.height;
+                 var w2 = 152;
+                 var h2 = 152;
+                 if (width > height) {
+                     if (width > w2) {
+                        h2 = height * h2 / width;
+                    }
+                 } else {
+                     if (height > h2) {
+                        w2 = width * h2 / height;
+                    }
+                }
+                canvas.width = w2;
+                canvas.height = h2;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, w2, h2);
+                var base64St = canvas.toDataURL("image/png");
+                document.getElementById("imagePreview8").src = base64St;
+                document.getElementById("imagePreview8").style.height = h2 + "px";
+                document.getElementById("imagePreview8").style.width= w2 + "px";
+
+            }
+            img.src = data;
+        };  
+        FR.readAsDataURL( file.files[0] );
+		
+		FR = new FileReader();
+        FR.onload = function(e) {
+            var data = e.target.result;
+            var canvas = document.createElement("canvas");
+            var img = document.createElement("img");
+            img.onload= function(){
+                 var width = img.width;
+                 var height = img.height;
+                 var w2 = 180;
+                 var h2 = 180;
+                 if (width > height) {
+                     if (width > w2) {
+                        h2 = height * h2 / width;
+                    }
+                 } else {
+                     if (height > h2) {
+                        w2 = width * h2 / height;
+                    }
+                }
+                canvas.width = w2;
+                canvas.height = h2;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, w2, h2);
+                var base64St = canvas.toDataURL("image/png");
+                document.getElementById("imagePreview8").src = base64St;
+                document.getElementById("imagePreview8").style.height = h2 + "px";
+                document.getElementById("imagePreview8").style.width= w2 + "px";
+
+            }
+            img.src = data;
+        };  
+        FR.readAsDataURL( file.files[0] );
+		
+		FR = new FileReader();
+        FR.onload = function(e) {
+            var data = e.target.result;
+            var canvas = document.createElement("canvas");
+            var img = document.createElement("img");
+            img.onload= function(){
+                 var width = img.width;
+                 var height = img.height;
+                 var w2 = 512;
+                 var h2 = 512;
+                 if (width > height) {
+                     if (width > w2) {
+                        h2 = height * h2 / width;
+                    }
+                 } else {
+                     if (height > h2) {
+                        w2 = width * h2 / height;
+                    }
+                }
+                canvas.width = w2;
+                canvas.height = h2;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, w2, h2);
+                var base64St = canvas.toDataURL("image/png");
+                document.getElementById("imagePreview9").src = base64St;
+                document.getElementById("imagePreview9").style.height = h2 + "px";
+                document.getElementById("imagePreview9").style.width= w2 + "px";
+
+            }
+            img.src = data;
+        };  
+        FR.readAsDataURL( file.files[0] );
+		
+		FR = new FileReader();
+        FR.onload = function(e) {
+            var data = e.target.result;
+            var canvas = document.createElement("canvas");
+            var img = document.createElement("img");
+            img.onload= function(){
+                 var width = img.width;
+                 var height = img.height;
+                 var w2 = 1024;
+                 var h2 = 1024;
+                 if (width > height) {
+                     if (width > w2) {
+                        h2 = height * h2 / width;
+                    }
+                 } else {
+                     if (height > h2) {
+                        w2 = width * h2 / height;
+                    }
+                }
+                canvas.width = w2;
+                canvas.height = h2;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, w2, h2);
+                var base64St = canvas.toDataURL("image/png");
+                document.getElementById("imagePreview10").src = base64St;
+                document.getElementById("imagePreview10").style.height = h2 + "px";
+                document.getElementById("imagePreview10").style.width= w2 + "px";
+
+            }
+            img.src = data;
+        };  
+        FR.readAsDataURL( file.files[0] );
+   }
+}
+</script>
+
+</head>
+
+<body>
+	<h1>Image Resizer</h1>
+  <input type="file" name="uploadImage" id="uploadImage" onchange="imageUploaded()">
+  <h2>29 px</h2>
+  <img id="imagePreview1">
+  <h2>40 px</h2>
+  <img id="imagePreview2">
+  <h2>58 px</h2>
+  <img id="imagePreview3">
+  <h2>76 px</h2>
+  <img id="imagePreview4">
+  <h2>80 px</h2>
+  <img id="imagePreview5">
+  <h2>87 px</h2>
+  <img id="imagePreview6">
+  <h2>120 px</h2>
+  <img id="imagePreview7">
+  <h2>152 px</h2>
+  <img id="imagePreview8">
+  <h2>512 px</h2>
+  <img id="imagePreview9">
+  <h2>1024 px</h2>
+  <img id="imagePreview10">
+</body>
+
+
+</html>
